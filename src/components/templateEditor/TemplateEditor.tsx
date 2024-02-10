@@ -50,10 +50,17 @@ const TemplateEditor: React.FC<ITemplateEditor> = ({ setVariables, template, set
 			return tagifyRef.current.getTagElmByValue(name);
 		}
 	};
+
+	const capitalizeTag = (tag: HTMLElement) => {
+		if (tagifyRef.current) {
+			tagifyRef.current.replaceTag(tag, { value: tag.title.toUpperCase() });
+		}
+	};
 	const handleDeleteVariable = useCallback(
 		(name: string) => {
 			if (tagifyRef.current) {
 				const tag = getTag(name);
+				console.log(tag?.title, tag?.title === name);
 				if (tag) {
 					convertToText(tag, name);
 					setTimeout(() => {
@@ -91,8 +98,8 @@ const TemplateEditor: React.FC<ITemplateEditor> = ({ setVariables, template, set
 					add: (e) => {
 						const data = e.detail.data?.value;
 						if (data) {
-							addVariable(data);
-							console.log(data);
+							addVariable(data.toUpperCase());
+							capitalizeTag(e.detail.tag);
 						}
 					},
 					remove: console.log,

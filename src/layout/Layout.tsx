@@ -90,7 +90,7 @@ const Layout: React.FC<ILayoutProps> = ({ children }) => {
 							text.
 						</Typography>
 						<br />
-						<Typography variant='body1'>You can add the same variable any number of times you want. please keep in mind that the variables are "case-sensitive"</Typography>
+						<Typography variant='body1'>You can add the same variable any number of times you want. please keep in mind that the variables are "case-insensitive"</Typography>
 						<br />
 						<Typography variant='body1'>
 							Whenever you add a new variable, we add that variable into our variables table on the right side of the page. Using this table, you can provide values to your variables and
