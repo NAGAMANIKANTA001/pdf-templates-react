@@ -1,0 +1,15 @@
+.textEditor {
+	height: 100% !important;
+	width: 100% !important;
+	max-height: 600px !important;
+	overflow-y: scroll !important;
+	outline: none;
+	border-radius: 10px;
+	background-color: azure;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	padding: 10px !important;
+	cursor: text !important;
+	:focus-visible {
+		outline: none;
+	}
+}

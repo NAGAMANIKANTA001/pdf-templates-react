@@ -1,0 +1,15 @@
+.pageroot {
+	background-color: lightgray;
+	width: 100vw;
+	min-height: 100dvh;
+}
+.header {
+	height: 64px;
+	.logo {
+		height: 50px;
+		width: auto;
+	}
+}
+.main {
+	height: calc(100% - 64px);
+}
