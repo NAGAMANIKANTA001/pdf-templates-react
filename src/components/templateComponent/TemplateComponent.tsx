@@ -52,14 +52,15 @@ const TemplateComponent: React.FC<ITemplateComponentProps> = ({ defaultTemplate,
 	const getTemplateVariables = (template: string): IVariable[] => {
 		const regex = VARIABLES_FROM_TEMPLATE_RE;
 		const matches = [...template.matchAll(regex)];
-
-		return matches.map((match) => ({ name: match[1], value: "" }));
+		const uniqueVars = [...new Set(matches.map((match) => match[1]))];
+		return uniqueVars.map((variable) => ({ name: variable, value: "" }));
 	};
 
 	useEffect(() => {
 		setTemplateString(defaultTemplate);
 		if (!defaultVariables) {
-			setVariables(getTemplateVariables(defaultTemplate));
+			console.log(getTemplateVariables(defaultTemplate));
+			setVariables([...new Set(getTemplateVariables(defaultTemplate))]);
 		}
 		getAllTemplates();
 	}, [defaultTemplate, defaultVariables]);
