@@ -89,6 +89,7 @@ const TemplateEditor: React.FC<ITemplateEditor> = ({ setVariables, template, set
 				pattern: /@/,
 				whitelist: [],
 				editTags: false,
+				duplicates: true,
 				dropdown: {
 					enabled: 1,
 					position: "text",
